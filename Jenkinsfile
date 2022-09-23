@@ -7,7 +7,7 @@ pipeline {
     }
     parameters{
         string(name: 'Version', defaultValue: '', description: 'version to deploy on prod')
-        choice(name: 'VERSION', choices['1.0.0','1.0.1','1.0.2'])
+        choice(name: 'VERSION', choices['1.0.0','1.0.1','1.0.2'], description: 'Choices to take')
         booleanParam(name: 'executeTests', defaultValue: true, description: 'The description')
     }
     environment{
@@ -58,7 +58,7 @@ pipeline {
             }
         }
     }
-    post{
+/*    post{
         always{
 
         }
@@ -68,5 +68,5 @@ pipeline {
         failure{
 
         }
-    }
+    }*/
 }
